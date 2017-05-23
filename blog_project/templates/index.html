@@ -1,5 +1,12 @@
 <hmtl>
   <body>
     <h1>{{ title }}</h1>
+    {% for obj in object_list %}
+
+    {{ obj.title }}
+    {{ obj.content }}</br>
+
+    {% endfor %}
+
   </body>
 </html>
