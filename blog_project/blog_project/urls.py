@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^posts/$', post_view.post_list),
     url(r'^posts/create/$', post_view.post_create),
     url(r'^posts/update/$', post_view.post_update),
-    url(r'^posts/detail/$', post_view.post_detail),
+    url(r'^posts/detail/(?P<id>\d+)/$', post_view.post_detail, name='detail'),
     url(r'^posts/delete/$', post_view.post_delete),
 ]
