@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 
 from posts import views as post_view
@@ -26,3 +28,6 @@ urlpatterns = [
     url(r'^posts/detail/(?P<id>\d+)/$', post_view.post_detail, name='detail'),
     url(r'^posts/delete/$', post_view.post_delete),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -29,7 +29,7 @@ def post_list(request):
         "object_list": queryset,
         "title": "List"
     }
-    return render(request, "index.html", context_data)
+    return render(request, "portfolio.html", context_data)
 
 
 def post_update(request):
