@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 # Register your models here.
-from posts.models import Post
+from posts.models import Post, Series
 
 
 class PostModelAdmin(admin.ModelAdmin):
@@ -17,4 +17,9 @@ class PostModelAdmin(admin.ModelAdmin):
         model = Post
 
 
+class SeriesModelAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+
+
 admin.site.register(Post, PostModelAdmin)
+admin.site.register(Series, SeriesModelAdmin)

@@ -47,7 +47,13 @@
 
               <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
                   <div class="mdl-card__media">
-                      <img class="article-image" src="{% static 'img/portfolio1.jpg' %}" border="0" alt="">
+                    {% if obj.image %}
+                     <img class="article-image" src='{{ obj.image.url }}' border="0" alt="">
+                     {% else %}
+                     <img class="article-image" src="{% static 'img/portfolio1.jpg' %}" border="0" alt="">
+                     {% endif %}
+
+
                   </div>
                   <div class="mdl-card__title">
                       <h2 class="mdl-card__title-text">{{ obj.title }}</h2>
