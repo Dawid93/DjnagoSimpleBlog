@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
@@ -22,11 +22,9 @@ from posts import views as post_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/$', post_view.post_list),
-    url(r'^posts/create/$', post_view.post_create),
-    url(r'^posts/update/$', post_view.post_update),
-    url(r'^posts/detail/(?P<id>\d+)/$', post_view.post_detail, name='detail'),
-    url(r'^posts/delete/$', post_view.post_delete),
+    # url(r'^posts/$', post_view.post_list),
+    # url(r'^posts/detail/(?P<id>\d+)/$', post_view.post_detail, name='detail'),
+    url(r'^posts/', include("posts.urls", namespace='posts')),
 ]
 
 if settings.DEBUG:

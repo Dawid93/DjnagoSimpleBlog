@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.http import HttpResponse
+
 from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 # Create your views here.
-
-
-def post_create(request):
-    return HttpResponse("<h1>Hello<h1>")
 
 
 def post_detail(request, id=None):
@@ -19,7 +15,7 @@ def post_detail(request, id=None):
         "title": instance.title,
         "instance": instance,
     }
-    return render(request, "post_detail.html", context_data)
+    return render(request, "portfolio-page.html", context_data)
 
 
 def post_list(request):
@@ -30,11 +26,3 @@ def post_list(request):
         "title": "List"
     }
     return render(request, "portfolio.html", context_data)
-
-
-def post_update(request):
-    return HttpResponse("<h1>Hello<h1>")
-
-
-def post_delete(request):
-    return HttpResponse("<h1>Hello<h1>")
