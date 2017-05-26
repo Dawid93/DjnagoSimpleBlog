@@ -36,13 +36,13 @@ img {
   background: url(../img/django.png) 50% no-repeat;
   background-size: cover;
   height: 120px;
-  width: 120px;
+  width: 500px;
   margin: 15px auto;
 }
 
 .is-compact .site-logo {
   height: 50px;
-  width: 50px;
+  width: 500px;
   margin: 7px auto;
 }
 
