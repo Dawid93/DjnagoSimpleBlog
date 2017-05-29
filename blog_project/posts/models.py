@@ -46,6 +46,6 @@ class Post(models.Model):
         ordering = ["-timestamp"]
 
 
-class SeriesToPost(models.Model):
-    post = models.ForeignKey(Post)
-    series = models.ForeignKey(Series)
+# class SeriesToPost(models.Model):
+#     post = models.ForeignKey(Post)
+#     series = models.ForeignKey(Series)
